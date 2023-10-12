@@ -10,10 +10,14 @@ const styles = StyleSheet.create({
     height: '70%',
   },
   buttonsContainer:{
-    flex: 1
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
   },
   counterText:{
     fontSize: 100
+    
   }
 });
 

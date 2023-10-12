@@ -5,10 +5,16 @@ const counterSlice = createSlice({
   initialState: {
     value: 0
   },
-  reducers: {}
+  reducers: {
+    increment: (state) => {
+      if (state.value < 100) {
+        state.value += 1;
+      }
+    },
+  }
 });
 
-export const {} = counterSlice.actions;
+export const {increment} = counterSlice.actions;
 
 export const store = configureStore({
     reducer: counterSlice.reducer
