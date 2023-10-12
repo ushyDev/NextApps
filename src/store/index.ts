@@ -4,7 +4,8 @@ import { MIN_VALUE, MAX_VALUE } from '../config';
 const counterSlice = createSlice({
   name: 'counter',
   initialState: {
-    value: 0
+    value: 0,
+    intervalID: null
   },
   reducers: {
     increment: (state) => {
@@ -16,11 +17,14 @@ const counterSlice = createSlice({
       if (state.value > MIN_VALUE) {
         state.value -= 1;
       }
-    }
+    },
+    setIntervalID: (state, action) => {
+      state.intervalID = action.payload
+    } 
   }
 });
 
-export const {increment, decrement} = counterSlice.actions;
+export const {increment, decrement, setIntervalID} = counterSlice.actions;
 
 export const store = configureStore({
     reducer: counterSlice.reducer
